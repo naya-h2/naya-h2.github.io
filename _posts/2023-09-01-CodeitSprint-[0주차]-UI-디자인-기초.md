@@ -7,7 +7,7 @@ categories:
 tags:
   - [부트캠프, Figma, UI]
 
-permalink: /CodeitSprint/UI-디자인-기초/
+permalink: /CodeitSprint/[0주차]-UI-디자인-기초/
 
 toc: true
 toc_sticky: true
