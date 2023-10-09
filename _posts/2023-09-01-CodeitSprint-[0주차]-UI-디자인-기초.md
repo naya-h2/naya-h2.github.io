@@ -13,7 +13,7 @@ toc: true
 toc_sticky: true
 
 date: 2023-09-01
-last_modified_at: 2023-09-01
+last_modified_at: 2023-09-04
 ---
 # Ch1. UI 디자인 이해하기
 - UI(User Interface) : 컴퓨터를 사용하기 위한 도구
@@ -44,6 +44,8 @@ last_modified_at: 2023-09-01
 - line을 추가하였다.
 - 텍스트를 추가하고 `ctrl+d` 이용해서 복제하였다.
   
+![image](https://github.com/naya-h2/naya-h2.github.io/assets/103186362/8148d284-23df-4b1c-aebe-506abf844294)
+
 ## 레이어
 레이어 간의 순서 이동에 대해 알아보았다.
 figma에서는 도형을 생성한 순서대로 앞으로 레이어가 생성된다.
@@ -59,7 +61,9 @@ figma에서는 도형을 생성한 순서대로 앞으로 레이어가 생성된
 - 레이어들 선택 후 `frame selection`
 - `clip content` : 프레임 바깥으로 나가는 요소들 잘리게 설정
 
-`Tip!` 그룹 / 프레임 생성 후에 알아보기 쉽게 이름을 설정해주자 !
+`Tip!` 그룹 / 프레임 생성 후에 알아보기 쉽게 이름을 설정해주자!
+
+![image](https://github.com/naya-h2/naya-h2.github.io/assets/103186362/71724ce7-2ba2-4a8a-826f-417ef63da529)
 
 ## 안내선
 안내선을 미리 추가해두고 작업을 시작하면, 도형을 추가한 뒤에 따로 간격 조절을 해야할 필요가 없어진다.
@@ -67,16 +71,22 @@ figma에서는 도형을 생성한 순서대로 앞으로 레이어가 생성된
 - `ruler` 기능을 켜고, 안내선을 끌어올 수 있다.
 - `shift + R` : ruler 기능 on/off
 
+![image](https://github.com/naya-h2/naya-h2.github.io/assets/103186362/934b3172-e74e-4eff-a1b7-07335e932481)
+
 ## 💻 스킬 UI 만들기
 - ruler 켜고 상하좌우에 16px씩 안내선을 추가하였다.
 - text, rect2, 3을 만든 후 그룹화하였다.
 - 그룹을 8px 간격 둔 채 alt로 복사한 뒤
 - 나머지는 `ctrl + d`를 이용하였다.
 
+![image](https://github.com/naya-h2/naya-h2.github.io/assets/103186362/60a43347-3e3a-402a-9b12-b02ac2e5b39a)
+
 ## 💻 나만의 이력서 만들기
 - `frame` > `paper` > `a4` 생성하였다.
 - 이력서 양식 텍스트, 실습에서 만든 명함과 스킬 ui를 가져왔다.
 - 아직 텍스트를 나만의 내용으로 수정하진 못했다 ,,
+
+![image](https://github.com/naya-h2/naya-h2.github.io/assets/103186362/8a50a8af-4047-4780-a5c4-425f5dac5bdb)
 
 # Ch3. 좋은 UI 디자인
 ## 좋은 UI 디자인
@@ -96,22 +106,32 @@ figma에서는 도형을 생성한 순서대로 앞으로 레이어가 생성된
 ## 💻 일관성: 회원가입 페이지
 아래의 회원가입 페이지의 UI를 일관성있게 바꿔보았다.
 
-[##_Image|kage@cNU2rg/btss71JGDc8/dSBSfC4bP2M3tyivfndNA0/img.png|CDM|1.3|{"originWidth":1662,"originHeight":1245,"style":"alignCenter","caption":"3-04. 일관성 : 회원가입 페이지"}_##]
+![image](https://github.com/naya-h2/naya-h2.github.io/assets/103186362/99ea0b68-4233-41cb-9ae2-2ad843dd06ca)
+
 - 텍스트 폰트, 크기, 굵기, 색을 통일하였다.
 - 사각형 크기, 색을 통일하였다. -> 위치 설정(안내선 이용, 좌우 60px)
-- input box에 규칙을 주었다. : 글씨 왼쪽정렬
-- 클릭이 가능한 box에 규칙을 주었다. : 가운데정렬
-[##_Image|kage@76zSZ/btssUMmyJeA/o6Wiq316vt8vOyhQjFjiCK/img.png|CDM|1.3|{"originWidth":1662,"originHeight":1245,"style":"alignCenter","caption":"3-04. 일관성 : 회원가입 페이지"}_##]
+- input box에 규칙을 주었다. : 글씨 왼쪽 정렬
+- 클릭이 가능한 box에 규칙을 주었다. : 가운데 정렬
+
+`내 답안`
+
+![image](https://github.com/naya-h2/naya-h2.github.io/assets/103186362/5a616d90-c72b-45e1-a5d2-6f32a79c5b2e)
 
 ## 💻 일관성: 구독 페이지
-[##_Image|kage@cBWgKg/btssUOSkxfa/4H3fk5h2eO2AVYl6Ru3aZ1/img.png|CDM|1.3|{"originWidth":2323,"originHeight":879,"style":"alignCenter"}_##]
+`내 답안`
+
+![image](https://github.com/naya-h2/naya-h2.github.io/assets/103186362/3b6075a6-781e-4587-982a-2e0ce6736c37)
+
 - 폰트, 크기, 색을 통일하였다.
 - 요금제 이름끼리 색을 통일한 후, bold 처리하였다.
 - 가격에 전부 bold 처리를 하여 일관성을 주었다.
 - 요금제 box 크기를 통일하였다.
 - select 버튼 색, 크기, 위치를 통일하였다.
 
-[##_Image|kage@JLlWU/btss3WovicW/vy7ek1ylGKwvswEtqbR4KK/img.png|CDM|1.3|{"originWidth":1066,"originHeight":853,"style":"alignCenter"}_##]
+`모범답안`
+
+![image](https://github.com/naya-h2/naya-h2.github.io/assets/103186362/8ab06ce6-493e-4bbd-b237-d81acf1c4e44)
+
 > 3개의 요금제 box를 어떻게 배치해야 하나 고민했었는데 모범답안처럼 하는게 젤 깔끔한 것 같다,,
 그리고 나는 요금 옆에 가격 부가 설명(/per member)를 배치했는데 그것보다 그냥 다음 줄에 놔두는 게 더 보기 좋은듯 ?!
 너무 주어진 박스 크기? 스타일에 사로잡혀있었나 ,,
@@ -126,8 +146,7 @@ figma에서는 도형을 생성한 순서대로 앞으로 레이어가 생성된
 - 중요도에 따라 구분하기 : `좌측 상단`이 가장 높은 위계를 갖게 됨
 
 ## 💻 위계 : 회원가입 페이지
-`Tip!` `여백은 4 or 8의 배수`로 두면 여러 해상도의 화면에서 깨지지 않는다.
-[##_Image|kage@cCR2TX/btssULVNKCh/4p3LKBxvme6YgVR2yDKxJ0/img.png|CDM|1.3|{"originWidth":1662,"originHeight":1245,"style":"alignCenter"}_##]
+`Tip!` **여백은 4 or 8의 배수**로 두면 여러 해상도의 화면에서 깨지지 않는다.
 
 - 연관성에 따라 여백을 다시 설정하였다.
 - 중요도에 따라 가장 중요한 제목과 sign up 버튼 디자인을 강조하였다.
@@ -135,13 +154,18 @@ figma에서는 도형을 생성한 순서대로 앞으로 레이어가 생성된
 - 중요도가 낮은 애들의 채도를 낮춰주었다. (회색 글씨)
   
 ## 💻 위계 : 구독 페이지
-[##_Image|kage@bTQPmG/btssVLBfom0/7bV8LwDuukAgrVbGipJdGK/img.png|CDM|1.3|{"originWidth":2559,"originHeight":1539,"style":"alignCenter"}_##]
+`내 답안`
+
+![image](https://github.com/naya-h2/naya-h2.github.io/assets/103186362/3429d794-7f17-4e26-84c2-dbcfbad887c5)
+
 - 중요한 내용이라고 주어진 페이지 제목, 요금제 선택 버튼, 가격, 요금제 이름에 bold 처리를 했다.
 - 중요한 내용은 보라색으로 강조하는 걸로 규칙을 세웠다.
 - 제목보다 가격이 더 중요하다고 했지만 가격을 보라색으로 하긴 좀 그래서 그냥 제목을 보라색으로 강조했다.
 - 중요하지 않은 내용인 페이지 설명, 가격 부가 설명은 글씨 크기를 줄이고, 채도를 낮추는 방법으로 위계를 낮췄다.
 
-[##_Image|kage@bXpycX/btss3JCSCcF/ZOCKoNWEBSEvItwxQBaNz0/img.png|CDM|1.3|{"originWidth":1065,"originHeight":741,"style":"alignCenter"}_##]
+`모범 답안`
+
+![image](https://github.com/naya-h2/naya-h2.github.io/assets/103186362/14540299-5a75-4a52-8b23-79cf8ca170f5)
 > 페이지 제목 크기를 좀 더 키웠어야 했구나,, 그리고 제목보다 가격이 더 중요한 정보라고 알려줬으니 나도 가격을 보라색으로 강조했어야 했다ㅋㅋ,, 이런!
 나머지는 대충 비슷하게 한 것 같다
 
