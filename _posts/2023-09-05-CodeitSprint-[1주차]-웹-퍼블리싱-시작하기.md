@@ -32,6 +32,7 @@ last_modified_at: 2022-07-24
   - html 코드는 html 태그로 크게 감싸진다.
 - <> 안에 써지는 것들을 태그라고 하고, 시작 & 종료 태그로 이루어져 있다.
   - 종료 태그 앞에는 /가 붙는다.
+
 [🔎 여기를 클릭하세요 ](https://first-page-of-hw.netlify.app/)
 > 내가 처음으로 만든 페이지!<br>
 netlify에서 배포도 하고, site name도 바꿔봤다. 
