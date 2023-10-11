@@ -12,8 +12,8 @@ permalink: /CodeitSprint/[1주차]-웹-퍼블리싱-시작하기/
 toc: true
 toc_sticky: true
 
-date: 2022-07-24
-last_modified_at: 2022-07-24
+date: 2023-09-05
+last_modified_at: 2022-09-05
 ---
 
 # Ch1. 수업 소개
