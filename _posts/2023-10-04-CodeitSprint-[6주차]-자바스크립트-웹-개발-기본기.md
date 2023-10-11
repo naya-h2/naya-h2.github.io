@@ -39,9 +39,9 @@ fetch('https://www.google.com') //서버로 요청
 fetch('https://www.google.com')
   .then((response) => { console.log(response); });
 ```
-- **위의 코드처럼 바로 response값을 출력할 수 없는 이유** ⭐⭐
-  - **response 파라미터는 하나의 객체**이기 때문에 여러 정보들을 가지고 있다.
-  - 따라서 그 중에 `text`라는 메소드를 호출해야지만 리스폰스의 실제 내용을 return받을 수 있기 때문이다.
+**위의 코드처럼 바로 response값을 출력할 수 없는 이유** ⭐⭐
+- **response 파라미터는 하나의 객체**이기 때문에 여러 정보들을 가지고 있다.
+- 따라서 그 중에 `text`라는 메소드를 호출해야지만 리스폰스의 실제 내용을 return받을 수 있기 때문이다.
 
 ## 웹이란?
 - Web : 전 세계적인 연결망, 웹 브라우저를 통해 연결되는 가상의 연결망 세계
@@ -51,23 +51,23 @@ fetch('https://www.google.com')
 
 ## URL이란?
 - URL(Uniform Resource Locator) : 웹에 존재하는 특정 데이터를 나타내는 문자열
-- https://www.codeitshopping.com/men/shirts?color=blue&size=m
-  - `www.codeitshopping.com`
-    - Host : 전 세계 서버 중 도메인 주소에 해당하는 하나의 **서버**를 특정
-  - `/men/shirts`
-    - Path : 서버에 있는 데이터 중 원하는 **데이터**를 특정
-    - 서버 안에 존재하는 데이터를 나타내는 부분
-  - `color=blue&size=m`
-    - Query : 데이터에 관한 **세부적인 요구사항**, `&`로 조건들이 이어진다
-    - ? 뒤에 있는 부분
+> https://www.codeitshopping.com/men/shirts?color=blue&size=m
+- `www.codeitshopping.com`
+  - Host : 전 세계 서버 중 도메인 주소에 해당하는 하나의 **서버**를 특정
+- `/men/shirts`
+  - Path : 서버에 있는 데이터 중 원하는 **데이터**를 특정
+  - 서버 안에 존재하는 데이터를 나타내는 부분
+- `color=blue&size=m`
+  - Query : 데이터에 관한 **세부적인 요구사항**, `&`로 조건들이 이어진다
+  - ? 뒤에 있는 부분
 
 ## URL과 리퀘스트 ⭐
 - 사용자가 웹 브라우저의 주소창에 URL을 입력하면
-  - `웹 브라우저` : 호스트(Domain Name)를 보고 통신할 서버를 찾는다.
-  - `웹 브라우저 -> 서버` : path와 query 부분을 담아 **리퀘스트**를 보낸다.
-  - `서버` : path와 query를 보고 의미하는 데이터를 찾는다.
-  - `서버 -> 웹 브라우저` : 찾은 데이터를 **리스폰스**에 담아 보낸다.
-  - `웹 브라우저` : 서버로부터 받은 리스폰스의 내용을 사용자에게 보여준다. 
+  1. `웹 브라우저` : 호스트(Domain Name)를 보고 통신할 서버를 찾는다.
+  2. `웹 브라우저 -> 서버` : path와 query 부분을 담아 **리퀘스트**를 보낸다.
+  3. `서버` : path와 query를 보고 의미하는 데이터를 찾는다.
+  4. `서버 -> 웹 브라우저` : 찾은 데이터를 **리스폰스**에 담아 보낸다.
+  5. `웹 브라우저` : 서버로부터 받은 리스폰스의 내용을 사용자에게 보여준다. 
 
 ## HTTP란?
 - `Scheme` : 프로토콜의 이름
@@ -99,6 +99,7 @@ fetch('https://www.google.com')
 ## JSON 데이터를 객체로 변환하기
 - **string 타입**의 JSON 데이터는 바로 자바스크립트 객체로 변환 가능
   - JSON 객체의 `parse` 메소드 사용!
+
 ```js
 fetch('https://jsonplaceholder.typicode.com/users')
   .then((response) => response.text())
@@ -112,7 +113,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
 ```
 
 ## 메소드의 의미
-- CRUD : Create-Rred-Update-Delete 의 약자로 데이터베이스 관점에서 데이터에 관한 처리를 나타낸 합성어
+- **CRUD** : Create-Rred-Update-Delete 의 약자로 데이터베이스 관점에서 데이터에 관한 처리를 나타낸 합성어
 - request는 서버의 데이터에 관해 어떤 처리를 요구하냐에 따라 4가지로 나눌 수 있다.
   - 데이터 조회 : `GET` (R)
   - 데이터 추가 : `POST` (C)
@@ -120,13 +121,17 @@ fetch('https://jsonplaceholder.typicode.com/users')
   - 데이터 삭제 : `DELETE` (D)
 
 ## Request의 Head와 Body
-- 하나의 request는 head와 body로 이루어져 있다.
-- head : request에 대한 부가 정보
-  - 메소드 정보도 head에 담겨 있다!
-  - header : head 안에 존재하는 하나하나의 **key-value 쌍**을 의미
-- body : 실제 데이터를 담는 부분
-  - `POST / PUT` 메소드의 경우 데이터를 **body**에 담아서 보내준다.
-  - `GET / DELETE` 메소드의 경우에는 body가 필요하지 않다.
+하나의 request는 head와 body로 이루어져 있다.
+
+**head** 
+- request에 대한 부가 정보
+- 메소드 정보도 head에 담겨 있다!
+- header : head 안에 존재하는 하나하나의 **key-value 쌍**을 의미
+
+**body** 
+- 실제 데이터를 담는 부분
+- `POST / PUT` 메소드의 경우 데이터를 **body**에 담아서 보내준다.
+- `GET / DELETE` 메소드의 경우에는 body가 필요하지 않다.
 
 ## POST request 보내기
 ```js
@@ -154,7 +159,7 @@ fetch('https://learn.codeit.kr/api/members',{
 - `stringify` 메소드 : 자바스크립트 객체를 string 타입의 JSON 데이터로 변환
 
 ## PUT, DELETE request 보내기
-- 직원 Alice의 부서를 수정하는 예시 코드
+직원 Alice의 부서를 **수정**하는 예시 코드
 ```js
 const member = {
   name : 'Alice',
@@ -169,7 +174,8 @@ fetch('https://learn.codeit.kr/api/members/2',{
   .then((response) => respose.text())
   .then((result) => {console.log(result);});
 ```
-- 직원 Alice를 삭제하는 예시 코드
+
+직원 Alice를 **삭제**하는 예시 코드
 ```js
 fetch('https://learn.codeit.kr/api/members/2',{
   method : 'DELETE',
@@ -179,30 +185,35 @@ fetch('https://learn.codeit.kr/api/members/2',{
 ```
 
 ## 모범적인 Web API, REST API ⭐
-- API (Application Programming Interface) : 개발할 때 사용할 수 있도록 특정 라이브러리나 플랫폼 등이 제공하는 데이터나 함수
-- Web API : 웹 개발에서 어느 URL로 어떤 리퀘스트를 보냈을 때, 무슨 처리가 수행되고 어떤 리스폰스가 오가는지에 대해 미리 정해둔 규칙(약속)
-  - 정리하자면, 프론트랑 백이 서로 이런 URL로 리퀘스트 보내면 서버에서 이런 처리를 하고, 이런 리스폰스 보내주기로 약속한 것!
+### API (Application Programming Interface) 
+- 개발할 때 사용할 수 있도록 특정 라이브러리나 플랫폼 등이 제공하는 데이터나 함수
 
-- REST architecture : 웹이 갖추어야 할 이상적인 아키텍처
-  - `Client - Server` : Client-Server 구조로 나누고, 서로가 담당한 역할에만 집중한다.
-  - `Stateless` : Server는 Client가 보낸 리퀘스트를 따로 저장하지 않는다.
-    - 하나의 리퀘스트에 필요한 모든 정보가 담겨있어야 한다.
-  - `Cache` : 캐시를 활용해서 네트워크 비용을 절감해야 한다.
-    - Server는 리스폰스에 해당 리스폰스를 **재활용해도 되는지 여부**를 담아서 보내야 함
-  - `Uniform Interface`⭐ : client가 server와 통신하는 인터페이스는 다음 4가지 조건을 준수해야 한다.
-    1. 리소스(웹 상에 존재하는 데이터)를 URI로 식별할 수 있어야 한다.
-    2. 리소스와 리소스의 표현을 엄격하게 구분해야 한다.
-        - client와 server 모두 리소스를 직접 다루는 게 아니라 **리소스의 표현**(html, png 파일 등)을 다뤄야 한다.
-    3. client의 리퀘스트와 server의 리스폰스는 그 자체에 담긴 정보만으로도 모든 것을 해석할 수 있어야 한다.
-    4. server의 리스폰스에는 리소스의 표현, 메타 정보뿐만 아니라 새로운 상태로 넘어갈 수 있도록 해주는 링크들도 포함되어야 한다.
-  - `Layered System` : client와 server 사이에는 프록시(proxy), 게이트웨이(gateway)와 같은 중간 매개 요소를 두기 때문에 계층형 층이 형성된다.
-  - `Code-On-Demand` : optional한 조건으로, client는 받아서 바로 실행할 수 있는 applet이나 script 파일을 server로부터 받을 수 있어야 한다.
+### Web API 
+- 웹 개발에서 어느 URL로 어떤 리퀘스트를 보냈을 때, 무슨 처리가 수행되고 어떤 리스폰스가 오가는지에 대해 미리 정해둔 규칙(약속)
+- 정리하자면, 프론트랑 백이 서로 이런 URL로 리퀘스트 보내면 서버에서 이런 처리를 하고, 이런 리스폰스 보내주기로 약속한 것!
+
+### REST architecture
+- 웹이 갖추어야 할 이상적인 아키텍처
+- `Client - Server` : Client-Server 구조로 나누고, 서로가 담당한 역할에만 집중한다.
+- `Stateless` : Server는 Client가 보낸 리퀘스트를 따로 저장하지 않는다.
+  - 하나의 리퀘스트에 필요한 모든 정보가 담겨있어야 한다.
+- `Cache` : 캐시를 활용해서 네트워크 비용을 절감해야 한다.
+  - Server는 리스폰스에 해당 리스폰스를 **재활용해도 되는지 여부**를 담아서 보내야 함
+- `Uniform Interface`⭐ : client가 server와 통신하는 인터페이스는 다음 4가지 조건을 준수해야 한다.
+  1. 리소스(웹 상에 존재하는 데이터)를 URI로 식별할 수 있어야 한다.
+  2. 리소스와 리소스의 표현을 엄격하게 구분해야 한다.
+      - client와 server 모두 리소스를 직접 다루는 게 아니라 **리소스의 표현**(html, png 파일 등)을 다뤄야 한다.
+  3. client의 리퀘스트와 server의 리스폰스는 그 자체에 담긴 정보만으로도 모든 것을 해석할 수 있어야 한다.
+  4. server의 리스폰스에는 리소스의 표현, 메타 정보뿐만 아니라 새로운 상태로 넘어갈 수 있도록 해주는 링크들도 포함되어야 한다.
+- `Layered System` : client와 server 사이에는 프록시(proxy), 게이트웨이(gateway)와 같은 중간 매개 요소를 두기 때문에 계층형 층이 형성된다.
+- `Code-On-Demand` : optional한 조건으로, client는 받아서 바로 실행할 수 있는 applet이나 script 파일을 server로부터 받을 수 있어야 한다.
     
-- `REST API`⭐ : Web API가 잘 설계되었는지 평가하는 가이드라인, REST 아키텍처에 부합하는 API
-  - URL에서 리소스에 대한 처리를 드러내면 안된다.
-    - **리소스에 대한 처리는 메소드로!**
-  - `도큐먼트`(하나의 파일)는 단수형 명사를
-  - `컬렉션`(파일들을 모아놓은 디렉토리)은 복수형 명사를 사용해야 한다.
+### REST API ⭐ 
+- Web API가 잘 설계되었는지 평가하는 가이드라인, REST 아키텍처에 부합하는 API
+- URL에서 리소스에 대한 처리를 드러내면 안된다.
+  - **리소스에 대한 처리는 메소드로!**
+- `도큐먼트`(하나의 파일)는 단수형 명사를
+- `컬렉션`(파일들을 모아놓은 디렉토리)은 복수형 명사를 사용해야 한다.
 
 ## JSON 데이터 다루기 종합
 - Serialization (직렬화) : 자바스크립트 객체 -> JSON 데이터 (string)
@@ -217,20 +228,21 @@ fetch('https://jsonplaceholder.typicode.com/users')
 - 따로 `parse`를 해줄 필요가 없다!!
 
 ## Status Code
-- response도 request와 마찬가지로 head와 body로 이루어져 있다.
-  - head : response에 대한 부가 정보
-  - body : 실제 데이터를 담는 부분
+response도 request와 마찬가지로 head와 body로 이루어져 있다.
+- head : response에 대한 부가 정보
+- body : 실제 데이터를 담는 부분
     
-- status code : request를 받은 서버가 **작업 결과**를 나타내기 위해 리스폰스의 헤드에 넣는 숫자
-  - **200** : 리퀘스트 정상 처리 완료 (OK)
-  - **404** : 해당 URL에 해당하는 데이터를 찾을 수 없음 (Not Found)
-  - 100 : 계속 리퀘스트를 보내라는 의미 (Countinue)
-  - 101 : 프로토콜 이걸로 바꾸자! 라고 서버한테 보냈을 때 -> 그래 그걸로 바꿀게~ 라는 의미
-  - 200번대 : 리퀘스트가 성공적으로 처리됨
-  - 201 : POST 성공, 리소스 생성 완료 (Created)
-  - 202 : 일단은 접수됨. 나중에 처리 될 거임 (Accepted)
-  - 300번대 : 리퀘스트 아직 처리 x, 처리하고 싶다면 클라이언트가 추가적인 작업을 해야함
-  - 400번대 : 클라이언트 쪽에 문제가 있음
+### status code 
+- request를 받은 서버가 **작업 결과**를 나타내기 위해 리스폰스의 헤드에 넣는 숫자
+- **200** : 리퀘스트 정상 처리 완료 (OK)
+- **404** : 해당 URL에 해당하는 데이터를 찾을 수 없음 (Not Found)
+- 100 : 계속 리퀘스트를 보내라는 의미 (Countinue)
+- 101 : 프로토콜 이걸로 바꾸자! 라고 서버한테 보냈을 때 -> 그래 그걸로 바꿀게~ 라는 의미
+- 200번대 : 리퀘스트가 성공적으로 처리됨
+- 201 : POST 성공, 리소스 생성 완료 (Created)
+- 202 : 일단은 접수됨. 나중에 처리 될 거임 (Accepted)
+- 300번대 : 리퀘스트 아직 처리 x, 처리하고 싶다면 클라이언트가 추가적인 작업을 해야함
+- 400번대 : 클라이언트 쪽에 문제가 있음
 
 ## Content-type이란?
 ```js
@@ -257,8 +269,9 @@ fetch('https://learn.codeit.kr/api/members', {
 - json 데이터 : `application/json`
 
 ## 알아두면 좋은 Content-type
+### XML(Extensible Markup Language)
 ```js
-<?xml version="1.0" encoding="UTF-8" ?>
+<xml version="1.0" encoding="UTF-8">
 <person>
     <name>Michael Kim</name>
     <height>180</height>
@@ -269,55 +282,59 @@ fetch('https://learn.codeit.kr/api/members', {
     </hobbies>
 </person>
 ```
-- XML(Extensible Markup Language) : 태그를 사용해서 데이터를 나타내는 데이터 포맷
+
+- 태그를 사용해서 데이터를 나타내는 데이터 포맷
 - 이런 식으로 태그로 나타낸다.
 - XML의 단점
   - JSON에 비해 많은 용량 차지
   - 가독성 떨어짐
   - 배우기 어려움
   
+### application/x-www-form-urlencoded 타입
 ```js
 id=6&name=Jason&age=34&department=engineering
 ```
-- `application/x-www-form-urlencoded` 타입
-  - HTML에서 form 태그를 사용할 때, form 태그는 해당 타입의 데이터를 body에 담아서 보낸다.
-  - `프로퍼티 이름 = 값` 형식으로 나타내며, `&` 기호로 연결
-  - URL에서 query 부분과 유사하다.
-  - URL 인코딩 : URL에서 약속한 문자가 아닌 애들은 다른 문자로 변환하는 것
-    - `URLSearchParams` 객체를 사용하면 자동으로 URL 인코딩을 적용해준다.
-  - Percent 인코딩 
-    - 특별한 용도를 가지고 있는 문자들은 원래 용도가 아니라 다른 용도로 사용될 경우 `%숫자` 형식으로 인코딩되는 방식
-    - 영어, 숫자를 제외한 다른 언어를 URL에서 나타낼 때에도 사용된다.
-    - **Percent 인코딩이 필요한 이유**
-      - URL에 대한 해석 오류를 방지하기 위해서!
-      - 'Tom&Jerry'가 query를 이어주는 용도인지, 데이터를 나타내는 문자열 &인지를 구분하기 위함이다.
 
+- HTML에서 form 태그를 사용할 때, form 태그는 해당 타입의 데이터를 body에 담아서 보낸다.
+- `프로퍼티 이름 = 값` 형식으로 나타내며, `&` 기호로 연결
+- URL에서 query 부분과 유사하다.
+- **URL 인코딩** 
+  - URL에서 약속한 문자가 아닌 애들은 다른 문자로 변환하는 것
+  - `URLSearchParams` 객체를 사용하면 자동으로 URL 인코딩을 적용해준다.
+- **Percent 인코딩** 
+  - 특별한 용도를 가지고 있는 문자들은 원래 용도가 아니라 다른 용도로 사용될 경우 `%숫자` 형식으로 인코딩되는 방식
+  - 영어, 숫자를 제외한 다른 언어를 URL에서 나타낼 때에도 사용된다.
+  - **Percent 인코딩이 필요한 이유**
+    - URL에 대한 해석 오류를 방지하기 위해서!
+    - 'Tom&Jerry'가 query를 이어주는 용도인지, 데이터를 나타내는 문자열 &인지를 구분하기 위함이다.
+
+### multipart/form-data 타입
 ```js
 const formData = new FormData();
 formData.append('email', email.value);
 ```
-- `multipart/form-data`
-  - 실무적으로 중요한 타입이다.
-  - **여러 종류의 데이터를 하나로 합친 데이터**를 의미한다.
-  - ex. 게시글을 올릴 때, text 정보뿐만 아니라 함께 올린 이미지, 동영상 정보도 함께 보낼 수 있는 Context-type.
-  - FormData 객체를 사용한다.
+
+- 실무적으로 중요한 타입이다.
+- **여러 종류의 데이터를 하나로 합친 데이터**를 의미한다.
+- ex. 게시글을 올릴 때, text 정보뿐만 아니라 함께 올린 이미지, 동영상 정보도 함께 보낼 수 있는 Context-type.
+- FormData 객체를 사용한다.
 
 ## 그 밖에 알아야 할 내용들
-- Ajax (Asynchronous JavaScript And XML)
-  - 초반의 웹은 화면의 일부분이 바뀌더라도 매번 아예 새로운 웹 페이지가 로드되는 형식이었다.
-  - 현재 페이지를 그대로 유지한 채로 서버에 리퀘스트를 보내고 리스폰스를 받아서 **새로운 페이지를 로드하지 않아도 되는 방식**이다.
-  - Asynchronous : 현재 화면에 영향을 미치지 않고 백그라운드에서 작업을 처리하는 것.
-  - ex. 구글맵에서 장소를 클릭하면 현재 페이지는 유지되면서 새로운 정보창이 뜨는 방식
-  - `XMLHttpRequest` 객체를 이용해서 Ajax 통신을 할 수 있다.
-    - 현재 실무에서는 주로 `fetch` 함수 또는 `axios` 패키지를 사용한다.
-      
-- `PATCH` vs `PUT`
-  - PATCH 메소드 : 기존의 데이터의 일부만 수정하고 싶을 때 사용한다.
-  - PUT 메소드 : 기존의 데이터를 아예 새로운 데이터로 덮어쓸 때 사용한다.
+### Ajax (Asynchronous JavaScript And XML)
+- 초반의 웹은 화면의 일부분이 바뀌더라도 매번 **아예 새로운 웹 페이지가 로드**되는 형식이었다.
+- 현재 페이지를 그대로 유지한 채로 서버에 리퀘스트를 보내고 리스폰스를 받아서 **새로운 페이지를 로드하지 않아도 되는 방식**이다.
+- `Asynchronous` : 현재 화면에 영향을 미치지 않고 백그라운드에서 작업을 처리하는 것.
+- ex. 구글맵에서 장소를 클릭하면 현재 페이지는 유지되면서 새로운 정보창이 뜨는 방식
+- `XMLHttpRequest` 객체를 이용해서 Ajax 통신을 할 수 있다.
+  - 현재 실무에서는 주로 `fetch` 함수 또는 `axios` 패키지를 사용한다.
     
-- `HEAD` 메소드
-  - GET 메소드와 동일하지만, head 부분만 받아온다.
-  - 실제 데이터가 아니라 데이터에 관한 `정보`만 얻고싶을 때 사용한다.
+### `PATCH` vs `PUT`
+- PATCH 메소드 : 기존의 데이터의 일부만 수정하고 싶을 때 사용한다.
+- PUT 메소드 : 기존의 데이터를 아예 새로운 데이터로 덮어쓸 때 사용한다.
+  
+### `HEAD` 메소드
+- GET 메소드와 동일하지만, head 부분만 받아온다.
+- 실제 데이터가 아니라 데이터에 관한 `정보`만 얻고싶을 때 사용한다.
 
 ---
 # Ch3. 비동기 실행과 Promise 객체
@@ -326,76 +343,83 @@ formData.append('email', email.value);
 - 비동기 실행 : 코드를 작성한 순서대로 실행하고, 나중에 콜백이 실행되는 방식
 
 ## 동기 실행과 비동기 실행
-- 동기 실행 : 한번 시작한 작업은 다 처리하고 나서, 다음 코드로 넘어가는 방식
-  - then 메소드로 콜백 함수를 등록한 뒤에 **리스폰스가 올 때까지 코드 실행이 잠시 중지**되는 방식
-- 비동기 실행
-  - then 메소드로 콜백 함수를 등록해 놓고, **일단 다음 줄을 실행**한 뒤에 **리스폰스가 오면 그때 콜백을 실행**하는 방식
-  - 동기 실행 방식보다 작업을 더 `빠른 시간` 내에 처리할 수 있다.
+### 동기 실행 
+- 한번 시작한 작업은 다 처리하고 나서, 다음 코드로 넘어가는 방식
+- then 메소드로 콜백 함수를 등록한 뒤에 **리스폰스가 올 때까지 코드 실행이 잠시 중지**되는 방식
+
+### 비동기 실행
+- then 메소드로 콜백 함수를 등록해 놓고, **일단 다음 줄을 실행**한 뒤에 **리스폰스가 오면 그때 콜백을 실행**하는 방식
+- 동기 실행 방식보다 작업을 더 `빠른 시간` 내에 처리할 수 있다.
 
 ## 알아야하는 비동기 실행 함수들
-- **setTimeout 함수**
+### setTimeout 함수
 ```js
 console.log('a');
 setTimeout(() => { console.log('b'); }, 2000);
 console.log('c');
 ```
+
 - 특정 콜의 실행을 `원하는 시간`만큼 미룰 수 있는 함수다.
 - `2000ms` 뒤에 `() => console.log('b')` 함수가 실행되는 코드이다.
     
-- **setInterval 함수**
+### setInterval 함수
 ```js
 console.log('a');
 setInterval(() => { console.log('b'); }, 2000);
 console.log('c');
 ```
+
 - 특정 콜백을 `일정한 시간 간격`으로 실행하도록 등록하는 함수다.
 
-- **addEventListener 메소드**
-  - 특정 `이벤트가 발생`했을 때 실행할 콜백을 등록하는 메소드이다.
+### addEventListener 메소드
+- 특정 `이벤트가 발생`했을 때 실행할 콜백을 등록하는 메소드이다.
 
 ## fetch 함수는 Promise 객체를 리턴합니다
-- Promise 객체
-  - 어떤 작업에 관한 `상태 정보`를 가지고 있는 객체
-- Promise의 3가지 상태
-  - `pending` : 진행 중
-    - fetch 함수로 콜백이 등록된 후, 리스폰스를 기다리는 상태
-  - `fulfilled` : 성공
-    - 성공적으로 리스폰스를 받았을 때
-  - `rejected` : 실패
-    - 네트워크가 끊겼거나 서버 자체와 연결되지 않는 등 리퀘스트/리스폰스를 받지 못한 경우
-      
+### Promise 객체
+- 어떤 작업에 관한 `상태 정보`를 가지고 있는 객체
+
+### Promise의 3가지 상태
+- `pending` : 진행 중
+  - fetch 함수로 콜백이 등록된 후, 리스폰스를 기다리는 상태
+- `fulfilled` : 성공
+  - 성공적으로 리스폰스를 받았을 때
+- `rejected` : 실패
+  - 네트워크가 끊겼거나 서버 자체와 연결되지 않는 등 리퀘스트/리스폰스를 받지 못한 경우
+    
 - fulfilled 상태가 되면 Promise 객체는 `작업 성공 결과`도 함께 가진다.
   - fetch 함수의 경우 Promise 객체의 작업 성공 결과는 `리스폰스`가 되는 것이다!
 - rejected 상태가 되면 Promise 객체는 `작업 실패 정보(이유)`를 가지게 된다.
 
 ## fetch 함수를 사용한 코드, 다시 해석하기
-- `then` 메소드
-  - 사실 `Promise` 객체의 메소드다.
-  - Promise 객체가 fulfilled 상태일 때 실행된다.
+### `then` 메소드
+- 사실 `Promise` 객체의 메소드다.
+- Promise 객체가 fulfilled 상태일 때 실행된다.
 - Promise의 작업 성공 결과는 콜백함수의 `첫 번째 파라미터`로 넘어온다.
 
 ## Promise Chaining이란?
-- Promise Chaining
-  - Promise 객체에 then 메소드를 연속적으로 붙이는 것
-- Promise Chaining이 가능한 이유
-  - then 메소드의 리턴값이 `새로운 Promise 객체`이기 때문이다.
-- **then 메소드의 `콜백 함수`의 리턴값** ⭐⭐⭐
-  - `Promise 객체`를 return하는 경우
-    - then 메소드의 return값은 함수의 return값과 동일한 상태 & 작업 성공 결과를 갖게 된다.
-  - `Promise 객체가 아닌 값`을 return하는 경우
-    - then 메소드의 return값은 fulfilled 상태
-    - 콜백 함수의 return값을 작업 성공 결과로 갖게 된다.
+### Promise Chaining
+- Promise 객체에 then 메소드를 연속적으로 붙이는 것
+
+### Promise Chaining이 가능한 이유
+- then 메소드의 리턴값이 `새로운 Promise 객체`이기 때문이다.
+
+### then 메소드의 `콜백 함수`의 리턴값 ⭐⭐⭐
+- `Promise 객체`를 return하는 경우
+  - then 메소드의 return값은 함수의 return값과 동일한 상태 & 작업 성공 결과를 갖게 된다.
+- `Promise 객체가 아닌 값`을 return하는 경우
+  - then 메소드의 return값은 fulfilled 상태
+  - 콜백 함수의 return값을 작업 성공 결과로 갖게 된다.
    
 ## text, json 메소드도 Promise 객체를 리턴해요
-- **text 메소드**
-  - 상태 : fulfilled
-  - 작업 성공 결과 : 리스폰스의 body에 있는 내용을 string으로 변환한 값
+### text 메소드
+- 상태 : fulfilled
+- 작업 성공 결과 : 리스폰스의 body에 있는 내용을 `string`으로 변환한 값
 
-- **json 메소드**
-  - 상태 : fulfilled
-  - 작업 성공 결과 : 리스폰스의 body에 있는 JSON 데이터를 JS 객체로 역직렬화한 객체
-  - body에 있는 내용이 JSON 타입이 아닐경우 에러 & rejected
- 
+### json 메소드
+- 상태 : fulfilled
+- 작업 성공 결과 : 리스폰스의 body에 있는 JSON 데이터를 `JS 객체`로 역직렬화한 객체
+- body에 있는 내용이 JSON 타입이 아닐경우 에러 & rejected
+
 ## Promise Chaning이 필요한 경우
 - 비동기적 작업을 `순차적으로` 하기 위해서 사용한다.
 - 콜백 안에 또 then 메소드를 사용하지 않아도 된다.
@@ -411,15 +435,15 @@ fetch('https://jsonplaceholder.typicode.com/users')
 - `error` 파라미터에는 작업 실패 정보가 저장된다.
 
 ## then 메소드 완벽하게 이해하기
-- **실행된 콜백이 아무 값도 return하지 않는다면?**
+### 실행된 콜백이 아무 값도 return하지 않는다면?
   - 함수의 return값이 undefined인 것과 마찬가지이다.
   - Promise 객체의 작업 성공 결과로 `undefined`를 갖게 된다.
   
-- **콜백 함수 내에서 에러가 발생한 경우**
+### 콜백 함수 내에서 에러가 발생한 경우
   - Promise 객체는 `rejected` 상태가 된다.
   - 작업 실패 정보로 해당 Error 객체를 갖는다.
 
-- **아무런 콜백도 실행되지 않는 경우**
+### 아무런 콜백도 실행되지 않는 경우
   - ex. fetch함수가 실패해서 error일 때의 콜백함수를 실행해야 하지만 콜백함수가 없을 때
   - 이전 Promise 객체와 동일한 상태 & 결과를 갖게 된다.
 
@@ -432,7 +456,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
 ```
 
 - `에러가 발생`하면 `catch` 메소드로 등록한 콜백 함수를 실행시킨다.
-- 사실 catch 메소드는 then 메소드를 변형한 것이다.
+- 사실 catch 메소드는 **then 메소드를 변형한 것**이다.
 - then 메소드에 첫 번째 파라미터에는 `undefined`를 주고 두 번째 파라미터만 넣은 것과 동일한 방식이다.
 - 실무에서는 catch 메소드를 주로 사용한다!
 
@@ -472,8 +496,10 @@ const p = new Promise((resolve, reject) => {
 
 - Promise 객체가 fulfilled 상태가 되면 resolve()를 호출한다.
 - rejected 상태가 되면 reject()를 호출한다.
+- resolve/reject()의 아규먼트가 객체의 결과로 저장된다.
 
 ## Promisify
+비동기 실행 함수를 Promise 객체로 감싸서 그 객체를 리턴하는 형식이다.
 ```js
 function wait(text, milliseconds) {
   const p = new Promise((resolve, reject) => {
@@ -489,7 +515,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
 ```
 
 - Promise Chaining 안에서 비동기 함수를 사용하면 return값을 사용할 수 없다.
-- **Promisify** : 비동기 실행 함수를 Promise 객체로 감싸서 그 객체를 리턴하는 형식
+
 - 콜백을 **한번만 실행**하는 것들에서만 가능하다.
   - ex. setTimeout, readFile 등
 - 콜백을 여러번 실행하는 함수들은 불가능하다.
@@ -497,17 +523,74 @@ fetch('https://jsonplaceholder.typicode.com/users')
   - Promise 객체는 한번 fulfilled/rejected 상태가 되면 **그 뒤로 상태가 바뀌지 않기 때문**이다.
 
 ## 이미 상태가 결정된 Promise 객체
-- `fulfilled` 상태로 결정된 Promise 객체 생성
+`fulfilled` 상태로 결정된 Promise 객체 생성하는 방법
 ```js
 const p = Promise.resolve('success');
 ```
 
-- `rejected` 상태로 결정된 Promise 객체 생성
+`rejected` 상태로 결정된 Promise 객체 생성하는 방법
 ```js
 const p = Promise.reject(new Error('fail'));
 ```
 
-- 이외에 `resolve`/`reject` 메소드를 사용하는 경우
-  - 함수의 return값을 모두 Promise 객체로 통일하고 싶은 경우
+이외에 `resolve`/`reject` 메소드를 사용하는 경우
+- 함수의 return값을 모두 Promise 객체로 통일하고 싶은 경우
 
 > `Tip!` Promise 객체는 항상 **결과**를 줄 수 있는 Provider(공급자)이고, then 메소드는 그 **결과를 소비하는 콜백**인 Consumer(소비자)를 설정하는 메소드이다!<br> 시점과는 연관 없음!
+
+## 여러 Promise 객체를 다루는 방법
+### all 메소드
+```js
+// 1번 직원 정보
+const p1 = fetch('https://learn.codeit.kr/api/members/1').then((res) => res.json());
+// 2번 직원 정보
+const p2 = fetch('https://learn.codeit.kr/api/members/2').then((res) => res.json());
+// 3번 직원 정보
+const p3 = fetch('https://learn.codeit.kr/api/members/3').then((res) => res.json());
+
+Promise
+  .all([p1, p2, p3])
+  .then((results) => {
+    console.log(results); // Array : [1번 직원 정보, 2번 직원 정보, 3번 직원 정보]
+  });
+```
+
+- all 메소드는 아규먼트로 들어온 **모든 Promise 객체가 fulfilled 상태**가 되어야 all 메소드의 return값 또한 fulfilled 상태가 된다.
+- all 메소드의 return값은 **각 객체들의 작업 성공 결과들로 이루어진 배열**을 작업 성공 결과로 갖는다.
+- 객체들 중 하나라도 rejected가 된다면 all 메소드의 return 객체 자체도 rejected가 된다.
+
+### race 메소드
+```js
+Promise
+  .race([p1, p2, p3])
+  .then((result) => {
+    console.log(result); // hello 출력
+  })
+```
+
+- race 메소드는 아규먼트로 들어온 객체들 중 가장 먼저 fulfilled / rejected 상태가 된 Promise 객체와 동일한 객체를 return한다.
+- 즉, Promise 객체들을 경쟁(race)시켜서 가장 빨리 결정된 객체를 선택하는 원리다.
+
+`참고` 이 밖에도 allSettled 메소드, any 메소드 등이 있다.
+
+## axios
+Ajax 통신을 할 수 있게 해주는 외부 패키지이다.
+```js
+axios
+.get('https://jsonplaceholder.typicode.com/users')
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+```
+
+- fetch 함수에는 없는 기능과 장점들이 존재
+  - serialization, deserialization 자동으로 수행
+  - 특정 리퀘스트에 대해 timeout 설정 가능
+  - 업로드 시 진행 상태 정보 얻을 수 있음
+  - 리퀘스트 취소 기능
+
+- 사용하기 위해서는 별도의 다운로드가 필요
+- 실무에서는 주로 axios를 사용하는 듯..?
